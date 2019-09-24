@@ -1,0 +1,81 @@
+
+input:
+12
+a
+x
+123
+
+output:
+2
+a
+all test:14
+all test:25
+all test:26
+all test:34
+all test:1122
+all test:2204
+all test:2213
+all test:2236
+120
+ !#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+all test:2258
+1
+-4318
+all test:2279
+all test:2632
+all test:2636
+all test:2668
+
+input:
+0
+p
+q
+-1
+
+output:
+2
+a
+all test:14
+all test:25
+all test:26
+all test:34
+all test:1122
+all test:2204
+all test:2213
+all test:2236
+120
+ !#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+all test:2258
+1
+-4318
+all test:2279
+all test:2504
+all test:2508
+all test:2540
+
+input:
+-100
+_
++
+3
+
+output:
+2
+a
+all test:14
+all test:25
+all test:26
+all test:34
+all test:1122
+all test:2204
+all test:2213
+all test:2236
+120
+ !#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+all test:2258
+1
+-4318
+all test:2279
+all test:2321
+all test:2325
+all test:2357

@@ -1,0 +1,15 @@
+const char const_char_a = 'a', const_char_b = 'b', const_char_c = 'c', const_char_A = 'A';
+const int const_int_postive = 1, const_int_zero = +0, const_int_negtive = -1;
+const char const_char_num = '9', const_char_underline = '_',const_char_add = '+', const_char_mul = '*';
+
+int int_global_var;
+char char_global_var;
+int int_global_array[10];
+char char_global_array[10];
+
+void main (){
+	scanf(int_global_var);
+	int_global_array[1] = int_global_var;
+	printf(int_global_array[1]);
+	return;
+}

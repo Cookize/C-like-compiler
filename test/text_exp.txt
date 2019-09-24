@@ -1,0 +1,39 @@
+const char const_char_a = 'a', const_char_b = 'b', const_char_c = 'c', const_char_A = 'A';
+const int const_int_postive = 1, const_int_zero = +0, const_int_negtive = -1;
+const char const_char_num = '9', const_char_underline = '_',const_char_add = '+', const_char_mul = '*';
+
+int int_global_var;
+char char_global_var;
+int int_global_array[10];
+char char_global_array[10];
+
+void main(){
+ 	const int test_if_1 = 1, test_if_2 = 2;
+    const char const_char_a = 'b', const_char_b = 'a';
+    int test_if_result, loop_num;
+
+    test_if_result = 0;
+    loop_num = 0;
+
+    while(test_if_result < 100){
+		test_if_result = test_if_result + loop_num;
+		loop_num = loop_num + 1;
+    }
+     switch((test_if_result - 100) * 3)
+        {
+            case 15:
+            {
+                test_if_result = -test_if_result * 10 + 2 * loop_num + 117- const_char_a;
+                loop_num = +loop_num - test_if_result + 10 * const_char_b - 100 + 42 + 34 + 2 * test_if_result;
+            }
+            default:
+            {
+                test_if_result = +test_if_result * 4 + 5 * loop_num + 24- const_char_b + 'c';
+                loop_num = -loop_num + test_if_result + 4 * const_char_b - 1653 + 453 + 555 - 4 * test_if_result;
+            }
+        }
+    printf(test_if_result);
+    printf(loop_num);
+    return;
+}
+

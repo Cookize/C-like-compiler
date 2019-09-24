@@ -1,0 +1,352 @@
+FUNC:	hanoi
+BLK:	0
+PREV:	
+NEXT:	2 
+DEF:
+USE:
+IN:
+	1:	n
+	2:	from
+	3:	to
+	4:	tmp
+OUT:
+	1:	n
+	2:	from
+	3:	to
+	4:	tmp
+*----------------------------------------------------------*
+BLK:	1
+PREV:	4 
+NEXT:	
+DEF:
+USE:
+IN:
+OUT:
+*----------------------------------------------------------*
+BLK:	2
+PREV:	0 
+NEXT:	3 4 
+DEF:
+USE:
+	1:	n
+IN:
+	1:	n
+	2:	from
+	3:	to
+	4:	tmp
+OUT:
+	1:	n
+	2:	from
+	3:	to
+	4:	tmp
+CODE:3	n > 0
+CODE:1	BZ LABEL_0
+*----------------------------------------------------------*
+BLK:	3
+PREV:	2 
+NEXT:	4 
+DEF:
+	1:	$t0
+	2:	$RET
+USE:
+	1:	n
+	2:	from
+	3:	to
+	4:	tmp
+IN:
+	1:	n
+	2:	from
+	3:	to
+	4:	tmp
+OUT:
+CODE:3	$t0 = n - 1
+CODE:3	PUSH $t0
+CODE:3	PUSH from
+CODE:3	PUSH to
+CODE:3	PUSH tmp
+CODE:3	CALL hanoi
+CODE:3	PRINT s$0 STR
+CODE:3	PRINT 10 CHAR
+CODE:3	PRINT n INT
+CODE:3	PRINT 10 CHAR
+CODE:3	PRINT s$1 STR
+CODE:3	PRINT 10 CHAR
+CODE:3	PRINT from CHAR
+CODE:3	PRINT 10 CHAR
+CODE:3	PRINT s$2 STR
+CODE:3	PRINT 10 CHAR
+CODE:3	PRINT to CHAR
+CODE:3	PRINT 10 CHAR
+CODE:3	$t0 = n - 1
+CODE:3	PUSH $t0
+CODE:3	PUSH tmp
+CODE:3	PUSH from
+CODE:3	PUSH to
+CODE:1	CALL hanoi
+*----------------------------------------------------------*
+BLK:	4
+PREV:	2 3 
+NEXT:	1 
+DEF:
+USE:
+IN:
+OUT:
+CODE:3	LABEL_0 :
+CODE:1	RET
+*----------------------------------------------------------*
+*************************************************************
+FUNC:	Fibonacci
+BLK:	0
+PREV:	
+NEXT:	2 
+DEF:
+USE:
+IN:
+	1:	n
+OUT:
+	1:	n
+*----------------------------------------------------------*
+BLK:	1
+PREV:	3 5 6 
+NEXT:	
+DEF:
+USE:
+IN:
+OUT:
+*----------------------------------------------------------*
+BLK:	2
+PREV:	0 
+NEXT:	3 4 
+DEF:
+USE:
+	1:	n
+IN:
+	1:	n
+OUT:
+	1:	n
+CODE:3	n == 0
+CODE:1	BZ LABEL_1
+*----------------------------------------------------------*
+BLK:	3
+PREV:	2 
+NEXT:	1 
+DEF:
+USE:
+IN:
+OUT:
+CODE:1	RET 0
+*----------------------------------------------------------*
+BLK:	4
+PREV:	2 
+NEXT:	5 6 
+DEF:
+USE:
+	1:	n
+IN:
+	1:	n
+OUT:
+	1:	n
+CODE:3	LABEL_1 :
+CODE:3	n == 1
+CODE:1	BZ LABEL_2
+*----------------------------------------------------------*
+BLK:	5
+PREV:	4 
+NEXT:	1 
+DEF:
+USE:
+IN:
+OUT:
+CODE:1	RET 1
+*----------------------------------------------------------*
+BLK:	6
+PREV:	4 
+NEXT:	1 
+DEF:
+	1:	$t0
+	2:	$RET
+	3:	$t1
+	4:	$t2
+	5:	$t4
+USE:
+	1:	n
+IN:
+	1:	n
+OUT:
+CODE:3	LABEL_2 :
+CODE:3	$t0 = n - 1
+CODE:3	PUSH $t0
+CODE:3	CALL Fibonacci
+CODE:3	$t1 = $RET
+CODE:3	$t2 = n - 2
+CODE:3	PUSH $t2
+CODE:3	CALL Fibonacci
+CODE:3	$t4 = $t1 + $RET
+CODE:1	RET $t4
+*----------------------------------------------------------*
+*************************************************************
+FUNC:	fac
+BLK:	0
+PREV:	
+NEXT:	2 
+DEF:
+USE:
+IN:
+	1:	n
+OUT:
+	1:	n
+*----------------------------------------------------------*
+BLK:	1
+PREV:	3 4 
+NEXT:	
+DEF:
+USE:
+IN:
+OUT:
+*----------------------------------------------------------*
+BLK:	2
+PREV:	0 
+NEXT:	3 4 
+DEF:
+USE:
+	1:	n
+IN:
+	1:	n
+OUT:
+	1:	n
+CODE:3	n == 1
+CODE:1	BZ LABEL_3
+*----------------------------------------------------------*
+BLK:	3
+PREV:	2 
+NEXT:	1 
+DEF:
+USE:
+IN:
+OUT:
+CODE:1	RET 1
+*----------------------------------------------------------*
+BLK:	4
+PREV:	2 
+NEXT:	1 
+DEF:
+	1:	$t0
+	2:	$RET
+	3:	$t2
+USE:
+	1:	n
+IN:
+	1:	n
+OUT:
+CODE:3	LABEL_3 :
+CODE:3	$t0 = n - 1
+CODE:3	PUSH $t0
+CODE:3	CALL fac
+CODE:3	$t2 = n * $RET
+CODE:1	RET $t2
+*----------------------------------------------------------*
+*************************************************************
+FUNC:	testRecursion
+BLK:	0
+PREV:	
+NEXT:	2 
+DEF:
+USE:
+IN:
+OUT:
+*----------------------------------------------------------*
+BLK:	1
+PREV:	2 
+NEXT:	
+DEF:
+USE:
+IN:
+OUT:
+*----------------------------------------------------------*
+BLK:	2
+PREV:	0 
+NEXT:	1 
+DEF:
+	1:	$RET
+	2:	$t0
+	3:	$t2
+	4:	$t3
+	5:	$t4
+	6:	$t6
+	7:	$t8
+	8:	$t9
+	9:	$t11
+	10:	$t13
+USE:
+IN:
+OUT:
+CODE:3	PUSH 2
+CODE:3	CALL fac
+CODE:3	$t0 = $RET
+CODE:3	PUSH 3
+CODE:3	CALL fac
+CODE:3	$t2 = $t0 * $RET
+CODE:3	PUSH $t2
+CODE:3	CALL Fibonacci
+CODE:3	$t3 = $RET
+CODE:3	PUSH 3
+CODE:3	CALL Fibonacci
+CODE:3	$t4 = $RET
+CODE:3	PUSH 4
+CODE:3	CALL Fibonacci
+CODE:3	$t6 = $t4 + $RET
+CODE:3	PUSH $t6
+CODE:3	CALL fac
+CODE:3	$t8 = $t3 - $RET
+CODE:3	PUSH 2
+CODE:3	CALL Fibonacci
+CODE:3	$t9 = $RET
+CODE:3	PUSH 3
+CODE:3	CALL Fibonacci
+CODE:3	$t11 = $t9 + $RET
+CODE:3	PUSH $t11
+CODE:3	CALL fac
+CODE:3	$t13 = $t8 / $RET
+CODE:3	PUSH $t13
+CODE:3	PUSH 97
+CODE:3	PUSH 98
+CODE:3	PUSH 99
+CODE:3	CALL hanoi
+CODE:1	RET
+*----------------------------------------------------------*
+*************************************************************
+FUNC:	main
+BLK:	0
+PREV:	
+NEXT:	2 
+DEF:
+USE:
+IN:
+OUT:
+*----------------------------------------------------------*
+BLK:	1
+PREV:	2 
+NEXT:	
+DEF:
+USE:
+IN:
+OUT:
+*----------------------------------------------------------*
+BLK:	2
+PREV:	0 
+NEXT:	1 
+DEF:
+	1:	$RET
+USE:
+IN:
+OUT:
+CODE:3	PRINT s$3 STR
+CODE:3	PRINT 10 CHAR
+CODE:3	PRINT s$4 STR
+CODE:3	PRINT 10 CHAR
+CODE:3	CALL testRecursion
+CODE:3	PRINT s$5 STR
+CODE:3	PRINT 10 CHAR
+CODE:1	RET
+*----------------------------------------------------------*
+*************************************************************

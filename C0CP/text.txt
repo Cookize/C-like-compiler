@@ -1,0 +1,15 @@
+int a;
+char c;
+void func(){
+a = 0;
+c = '+';
+return;
+}
+void main(){
+a = 1;
+c = '-';
+func();
+printf(a);
+printf(c);
+return;
+}
